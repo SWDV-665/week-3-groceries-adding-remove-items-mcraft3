@@ -7,12 +7,14 @@
 <ion-content padding>
   <ion-list>
 
+    <!-- Loop thru items array to display all items. -->
     <ion-item-sliding *ngFor="let item of items; let i = index">
       <ion-item>
         <h2>{{ item.name }}</h2>
         <p>{{ item.quantity }}</p>
       </ion-item>
       <ion-item-options>
+        <!-- Grab item/object to be removed and its index when selecting. -->
         <button (click)="removeItem(item, i)" ion-button color="secondary" icon-start>
           <ion-icon name="trash"></ion-icon>
           Done

@@ -38,8 +38,10 @@ export class HomePage {
 
   }
 
+  // remove item with object and it's index as parameters.
   removeItem(item, index) {
     console.log("Removing item - ", item, "index: ", index);
+    // Display toast message alert to confirm item being removed.
     const toast = this.toastCtrl.create({
       message: 'Removing Item - ' + 'index: ' + index + " ...",
       duration: 3000,
@@ -52,7 +54,7 @@ export class HomePage {
     });
 
     toast.present();
-
+    // Remove one object at given index.
     this.items.splice(index, 1);
   }
 
@@ -61,6 +63,7 @@ export class HomePage {
     this.showAddItemPrompt();
   }
 
+  // Use Alert Controller to take input and add item to items array.
   showAddItemPrompt() {
     const prompt = this.alertCtrl.create({
       title: 'Add Item',
