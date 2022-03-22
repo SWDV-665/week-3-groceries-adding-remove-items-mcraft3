@@ -8,9 +8,10 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  // Class variable for angular template of title of home.html page
   title = "Grocery";
 
+  // Array of items
   items = [
     {
       name: "Milk",
@@ -41,7 +42,7 @@ export class HomePage {
   // remove item with object and it's index as parameters.
   removeItem(item, index) {
     console.log("Removing item - ", item, "index: ", index);
-    // Display toast message alert to confirm item being removed.
+    // Display ionic toast component message alert to confirm item being removed.
     const toast = this.toastCtrl.create({
       message: 'Removing Item - ' + 'index: ' + index + " ...",
       duration: 3000,
@@ -63,7 +64,7 @@ export class HomePage {
     this.showAddItemPrompt();
   }
 
-  // Use Alert Controller to take input and add item to items array.
+  // Use Alert Controller Prompt to take input and add item to items array.
   showAddItemPrompt() {
     const prompt = this.alertCtrl.create({
       title: 'Add Item',
@@ -89,6 +90,7 @@ export class HomePage {
           text: 'Save',
           handler: item => {
             console.log('Saved clicked', item);
+            // add new item to items array
             this.items.push(item);
           }
         }

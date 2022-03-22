@@ -1,5 +1,6 @@
 <ion-header>
   <ion-navbar>
+    <!-- Angular Templates {{}} for Dynamic values on home.ts -->
     <ion-title>{{ title }}</ion-title>
   </ion-navbar>
 </ion-header>
@@ -7,7 +8,7 @@
 <ion-content padding>
   <ion-list>
 
-    <!-- Loop thru items array to display all items. -->
+    <!-- Loop thru items array to display all items; assign index. -->
     <ion-item-sliding *ngFor="let item of items; let i = index">
       <ion-item>
         <h2>{{ item.name }}</h2>
